@@ -1,0 +1,19 @@
+[
+    {
+        "id": "dispensing.app",
+        "label": "Dispensing",
+        "description": "Dispense Medication",
+        "extensions": [
+            {
+                "id": "dispensing.app.homepageLink",
+                "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+                "type": "link",
+                "label": "dispensing.app.dispensing.label",
+                "url": "dispensing/dispense.page?appId=dispensing.app",
+                "icon": "icon-shopping-cart",
+                "order": 1,
+                "requiredPrivilege": "App: dispensing.app.dispense"
+            }
+        ]
+    }
+]
