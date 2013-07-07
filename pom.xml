@@ -34,6 +34,8 @@
 	
 	<properties>
 		<openMRSVersion>1.9.3</openMRSVersion>
+		<uiframeworkVersion>2.5.2</uiframeworkVersion>
+		<appFrameworkVersion>2.0-SNAPSHOT</appFrameworkVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -92,6 +94,22 @@
 				<scope>test</scope>
 			</dependency>
 			<!-- End OpenMRS core -->
+			
+			<dependency>
+	            <groupId>org.openmrs.module</groupId>
+	            <artifactId>uiframework-omod</artifactId>
+	            <version>${uiframeworkVersion}</version>
+	            <type>jar</type>
+	            <scope>provided</scope>
+        	</dependency>
+        	
+        	<dependency>
+	            <groupId>org.openmrs.module</groupId>
+	            <artifactId>appframework-omod</artifactId>
+	            <version>${appFrameworkVersion}</version>
+	            <type>jar</type>
+	            <scope>provided</scope>
+        	</dependency>
 		</dependencies>
 	</dependencyManagement>
 
