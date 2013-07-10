@@ -24,6 +24,9 @@
 	    <require_module>
 	        org.openmrs.module.uiframework
 	    </require_module>
+        <require_module>
+            org.openmrs.module.appframework
+        </require_module>
 	</require_modules>
 	
 	<!-- Maps hibernate file's, if present -->

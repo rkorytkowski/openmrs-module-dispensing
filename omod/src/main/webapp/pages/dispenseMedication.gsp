@@ -31,23 +31,16 @@ ${ ui.includeFragment("uicommons", "validationMessages")}
 
     <form class="simple-form-ui" id="dispensing" method="POST">
         <section id="information">
-            <span class="title">${ui.message("dispensing.app.information.title")}</span>
+            <span class="title">${ui.message("dispensing.app.dispensing.title")}</span>
 
             <fieldset>
-                <legend>${ui.message("dispensing.app.date.label")}</legend>
-                 ${ ui.includeFragment("uicommons", "field/datetimepicker", [
+                <legend>${ui.message("dispensing.app.information.title")}</legend>
+                ${ ui.includeFragment("uicommons", "field/datetimepicker", [
                         label: ui.message("dispensing.app.date.label"),
                         formFieldName: "date",
                         useTime: true,
-                        left: true,
                         classes: ["required"]
-                  ])}
-                  ${ ui.includeFragment("uicommons", "field/dropDown", [
-                        label: ui.message("dispensing.app.prescriber.label"),
-                        formFieldName: "prescriber",
-                        
-                        classes: ["required"]
-                  ])}
+                 ])}
             </fieldset>
             <fieldset>
                 <legend>${ui.message("dispensing.app.medication.title")}</legend>
@@ -59,23 +52,78 @@ ${ ui.includeFragment("uicommons", "validationMessages")}
                 ${ ui.includeFragment("uicommons", "field/text", [
                         label: ui.message("dispensing.app.frequency.label"),
                         formFieldName: "frequency",
+                        left: true,
                         classes: ["required"]
                 ])}
+                ${ ui.includeFragment("uicommons", "field/dropDown", [
+                        label: ui.message("dispensing.app.frequency.label"),
+                        formFieldName: "frequency_units",
+                        left: true,
+                        options: [
+                            [value: "every day", label: "every day", selected: true],
+                            [value: "every 2 days", label: "every 2 days"],
+                            [value: "every 3 days", label: "every 3 days"],
+                            [value: "every 4 days", label: "every 4 days"],
+                            [value: "every week", label: "every week"],
+                            [value: "every 2 weeks", label: "every 2 weeks"]
+                        ]
+                ])}
+                <div class="clear" />
                 ${ ui.includeFragment("uicommons", "field/text", [
                         label: ui.message("dispensing.app.dose.label"),
                         formFieldName: "dose",
+                        left: true,
                         classes: ["required"]
                 ])}
+                ${ ui.includeFragment("uicommons", "field/dropDown", [
+                        label: ui.message("dispensing.app.dose.label"),
+                        formFieldName: "dose_units",
+                        left: true,
+                        options: [
+                            [value: "mg", label: "mg", selected: true],
+                            [value: "micorgram", label: "microgram"],
+                            [value: "mg/mil", label: "mg/mil"],
+                            [value: "microgram/mil", label: "microgram/mil"],
+                            [value: "microgram/hour", label: "microgram/hour"],
+                            [value: "mL", label: "m:"],
+                            [value: "grams", label: "grams"],
+                            [value: "international units", label: "international units"],
+                            [value: "million international units", label: "million international units"]
+                        ]
+                ])}
+                <div class="clear" />
                 ${ ui.includeFragment("uicommons", "field/text", [
                         label: ui.message("dispensing.app.duration.label"),
                         formFieldName: "duration",
+                        left: true,
                         classes: ["required"]
                 ])}
+                <p class="left">days</p>
+                <div class="clear" />
                 ${ ui.includeFragment("uicommons", "field/text", [
                         label: ui.message("dispensing.app.amount.label"),
                         formFieldName: "amount",
+                        left: true,
                         classes: ["required"]
                 ])}
+                ${ ui.includeFragment("uicommons", "field/dropDown", [
+                        label: ui.message("dispensing.app.amount.label"),
+                        formFieldName: "amount_units",
+                        left: true,
+                        options: [
+                            [value: "tablet", label: "tablet", selected: true],
+                            [value: "tube", label: "tube"],
+                            [value: "capsule", label: "capsule"],
+                            [value: "bottle", label: "bottle"],
+                            [value: "inhaler", label: "inhaler"],
+                            [value: "application", label: "application"],
+                            [value: "patch", label: "patch"],
+                            [value: "sachet", label: "sachet"],
+                            [value: "vial", label: "vial"],
+                            [value: "suppository", label: "suppository"]
+                        ]
+                ])}
+                <div class="clear" />
             </fieldset>
 
         </section>
